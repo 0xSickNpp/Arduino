@@ -123,6 +123,5 @@
 		}
 	}
 	echo '</td></table>';
-	//header("Location: http://localhost/Telecomunicazioni/tempo_reale.php");
 ?>
 
