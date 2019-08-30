@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Arduino - Potenziometro</title>
+	<link rel="icon" href="/imgs/logo.png" type="image/png" />
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<meta charset="utf-8">
+</head>
+<body>
+	<nav class="navbar" style="border:none;border-bottom: 5px solid darkred;border-top: 3px solid darkred;position: fixed;">
+		<img src="imgs/logo.png" id="logo">
+		<a href="#procedimento" class="navbar-href"> PROCEDIMENTO </a>
+		<a href="#hardware" class="navbar-href"> HARDWARE </a>
+		<a href="#schema-elettrico" class="navbar-href"> SCHEMA ELETTRICO </a>
+		<a href="#software" class="navbar-href"> SOFTWARE </a>
+		<img src="imgs/logo.png" id="logo">
+	</nav>
+	<div class="container" style="text-align: center;padding-top: 7%;width: 100%;">
+		<div id="text-title">
+			<h2 class="title">PROGETTO DI TELECOMUNICAZIONI <i class="fas fa-satellite-dish"></i></h2>
+		</div>
+	</div>
+	<br><br>
+	<h2 id="introduzione" class="subt">INTRODUZIONE</h2><br>
+	<i>
+		<div class="content-text">
+			Il progetto scelto, come da titolo, sarà un circuito che <b>accenderà un determinato led in base al valore letto tramite un potenziometro</b>.
+		</div>
+	</i>
+	<hr>
+	<h2 id="procedimento" class="subt">PROCEDIMENTO</h2><br>
+	<div class="content-text">
+		<i>Per prima cosa abbiamo assemblato il circuito sull' <b>ARDUINO UNO</b>.
+Poi abbiamo scritto del codice in <b>C</b> dove in base al valore del potenziometro, l' Arduino UNO invia al dispositivo seriale (<b>RASPBERRY PI</b>) un valore X.
+Il codice scritto in <b>PYTHON</b>, che si interfaccia all'Arduino UNO come dispositivo seriale, registra in una variabile il valore ricevuto e invia una richiesta web tramite metodo <b>POST</b> ad una pagina web su un server in cui è attivo uno script scritto in <b>JAVASCRIPT</b> usando il framework <b>NODEJS</b> (con il modulo <b>EXPRESS</b>) che successivamente registrerà il valore insieme all'orario dell'arrivo della richiesta in una variabile. 
+I risultati vengono mostrati in tempo reale in un' <a href="realtime">altra pagina</a> che periodicamente invierà una richiesta web alle <b>API</b> del sito per ottenere gli ultimi valori. Tutto ciò avviene su un raspberry pi che lavora come <b>SERVER</b>.</i>
+	</div>
+	<div class="logos">
+		<i class="fab fa-node" style="color: green;"></i><i class="fab fa-python" style="color: #0C91A5;"></i><i class="fab fa-raspberry-pi" style="color: #D01D09;"></i><i class="fab fa-npm" style="color: red;"></i><i class="fab fa-js" style="color: gold;"></i>
+	</div>
+	<hr>
+	<h2 id="hardware" class="subt">HARDWARE</h2><br>
+		<div align="center">
+			<table>
+				<td>
+					<div class="container" style="text-align: center;">
+						<div class="card" style="width: 18rem;height: 420px;position: static;">
+	  						<img src="imgs/raspberry.jpg" class="card-img-top" alt="RASPBERRYPI">
+	  						<div class="card-body">
+	  							<h5 class="card-title">RASPBERRY PI 3 B+</h5>
+	    						<p class="card-text">Dispositivo che abbiamo usato come server e dispositivo seriale.</p>
+	    						<br>
+	    						<a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/" class="btn 	btn-primary">Vai al sito</a>
+		  					</div>
+						</div>
+					</div>
+				</td>
+				<td>
+					<div class="card" style="width: 18rem;height: 420px;position: static;">
+	  					<img src="imgs/arduno.jpg" class="card-img-top" alt="ARDUINO UNO">
+	  					<div class="card-body">
+	  						<h5 class="card-title">ARDUINO UNO Rev 3</h5>
+	    					<p class="card-text">Dispositivo che abbiamo usato per alimentare il curcuito, inviare i valori del potenziometro ed accendere i led.</p>
+	    					<a href="https://store.arduino.cc/arduino-uno-rev3" class="btn btn-primary">Vai al sito</a>
+	  					</div>
+					</div>
+				</td>
+				<td>
+					<div class="card" style="width: 18rem;height: 420px;position: static;">
+	  					<img src="imgs/potenziometro.png" class="card-img-top" alt="POTENZIOMETRO">
+	  					<div class="card-body">
+	  						<h5 class="card-title">POTENZIOMETRO</h5>
+	    					<p class="card-text">Resistenza variabile regolabile.</p>
+	    					<a href="https://it.wikipedia.org/wiki/Potenziometro" class="btn btn-primary">Wikipedia</a>
+	  					</div>
+					</div>
+				</td>
+				<td>
+					<div class="container" style="text-align: center;">
+						<div class="card" style="width: 18rem;height: 420px;position: static;">
+	  						<img src="imgs/breadboard.jpeg" class="card-img-top" alt="RASPBERRYPI">
+	  						<div class="card-body">
+	  							<h5 class="card-title">BREADBOARD</h5>
+	    						<p class="card-text">Strumento utilizzato per assemblare il circuito e farci circolare la corrente. Fa da base.</p>
+	    						<br>
+	    						<a href="https://it.wikipedia.org/wiki/Breadboard" class="btn btn-primary">Wikipedia</a>
+		  					</div>
+						</div>
+					</div>
+				</td>
+			</table>
+		</div>
+	<hr>
+	<h2 id="schema-elettrico" class="subt">SCHEMA ELETTRICO</h2><br>
+	<img src="imgs/circuito.jpg">
+	<hr>
+	<h2 id="software" class="subt">SOFTWARE</h2><br>
+	<div align="center">
+		<button type="button" class="btn btn-primary btn-lg" id="ard-link"><img src="imgs/logo.png" id="btn-logo"> Arduino source</button>
+		<button id="pyth-link" type="button" class="btn btn-primary btn-lg" style="background-color: gold; color: #0C91A5;"><i class="fab fa-python"></i>Python source</button>
+		</div>
+		<br><br>
+</body>
+<script type="text/javascript" src="js/controller.js"></script>
+</html>
