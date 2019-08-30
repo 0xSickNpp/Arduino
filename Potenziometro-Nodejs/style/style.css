@@ -1,0 +1,87 @@
+body{
+	padding: 0px;
+	margin: 0px;
+}
+
+.navbar{
+	background-color: #1E116C;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+	width: 100%;
+}
+
+.navbar-href{
+	text-decoration: none;
+	padding: 0px;
+	border: 0px;
+	font-size: 20px;
+	word-spacing: 10px;
+}
+
+.navbar-href:hover{
+	text-decoration: none;
+	background-color: yellow;
+	transition: 0.2s;
+	font-size: 22px;
+	border-radius: 10px;
+}
+
+#logo{
+	height: 5%;
+	width: 5%;
+}
+
+.title{
+	font-weight: bold;
+	color: darkred;
+}
+
+#text-title{
+	border-top: 4px solid darkred;
+	border-bottom: 4px solid darkred;
+}
+
+.content-text{
+	font-size: 20px;
+	border-left: 2.5px solid transparent;
+}
+
+.logos{
+	text-align: center;
+	font-size: 50px;
+	letter-spacing: 30px;
+}
+
+.subt{
+	color: #20BA91;
+	font-weight: bolder;
+}
+
+#separator{
+	background-color: darkgrey;
+}
+
+hr{
+	background-color: black;
+}
+
+.spaced-elements{
+	padding-left: 5px;
+}
+
+#arduino-download{
+	background-color: #0D93CD;
+	border-radius: 5px;
+}
+
+#btn-logo{
+	height: 30px;
+	width: 40px;
+}
+
+.sub{
+	font-size: 30px;
+	font-weight: bolder;
+	display: inline;
+}
