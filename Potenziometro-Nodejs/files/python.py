@@ -20,7 +20,7 @@ while 1: #Inizio dell'ascolto sulla porta seriale
         'token'  : Token
     }
     requests.post("http://127.0.0.1/telecomunicazioni/add.php", data=params) #Eseguendo la request verso la pagina php + parametri
-    sleep(5) #Pausa di 3 secondi
+    sleep(0.7) #Pausa di 3 secondi
     
 print "Exiting\n"
 os.system(["cls"]["clear"][os.name == "nt"])
