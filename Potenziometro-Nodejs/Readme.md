@@ -9,6 +9,5 @@ START
 
 CONNECT
 
-Connect to http://localhost:8000(/realtime) || http://(your.local.ip):8000(/realtime) || http://(your-public-ip*):8000(/realtime)
+Connect to http://localhost:8000(/realtime) || http://(your.local.ip):8000(/realtime) || http://(your ip*):8000(/realtime)
 
-*It will work only if you have a static ip ("private")
